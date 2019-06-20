@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Encompass on Encompass Docs</title>
+    <link>/</link>
+    <description>Recent content in Encompass on Encompass Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 11 Jun 2019 20:35:17 -0700</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>API Reference</title>
+      <link>/notes/api_reference/</link>
+      <pubDate>Tue, 11 Jun 2019 20:35:17 -0700</pubDate>
+      
+      <guid>/notes/api_reference/</guid>
+      <description>A more formal API Reference can be found on ReadTheDocs.</description>
+    </item>
+    
+    <item>
+      <title>Library Integration</title>
+      <link>/pong/ball/bouncing/library_integration/</link>
+      <pubDate>Mon, 27 May 2019 13:19:31 -0700</pubDate>
+      
+      <guid>/pong/ball/bouncing/library_integration/</guid>
+      <description>So we&amp;rsquo;ve found a library in our target language that implements some feature we want. In our case it&amp;rsquo;s the bump.lua library that provides AABB collision detection.
+Now we need to declare that library to TypeScript so we can use it in our game code.
+If you&amp;rsquo;d like a very detailed description of declaration files and how they work, I recommend perusing the official documentation. But I will give a specific use-case walkthrough here.</description>
+    </item>
+    
+    <item>
+      <title>Motion Engine</title>
+      <link>/pong/move_paddle/motion_engine/</link>
+      <pubDate>Thu, 23 May 2019 13:03:39 -0700</pubDate>
+      
+      <guid>/pong/move_paddle/motion_engine/</guid>
+      <description>To create an Engine, we extend the Engine class.
+Create a file: game/engines/motion.ts
+import { Engine } from &amp;quot;encompass-ecs&amp;quot;; export class MotionEngine extends Engine { public update(dt: number) {} }  Every Engine needs an update method, which optionally takes a delta-time value as a parameter.
+delta-time is simply the time that has elapsed between the last frame and the current one in seconds. We&amp;rsquo;ll talk more about why this is important in a minute.</description>
+    </item>
+    
+    <item>
+      <title>Canvas Component</title>
+      <link>/pong/draw_paddle/canvas_component/</link>
+      <pubDate>Thu, 23 May 2019 11:26:31 -0700</pubDate>
+      
+      <guid>/pong/draw_paddle/canvas_component/</guid>
+      <description>LOVE provides a neat little drawing feature called Canvases. You can tell LOVE to draw to a Canvas instead of the screen, and then save the Canvas so you don&amp;rsquo;t have to repeat lots of draw procedures. It&amp;rsquo;s very nifty.
+Let&amp;rsquo;s set up a CanvasComponent. To create a new Component type, we extend the Component class.
+Create a file: game/components/canvas.ts
+import { DrawComponent } from &amp;quot;encompass-ecs&amp;quot;; export class CanvasComponent extends DrawComponent { public canvas: Canvas; public x_scale: number; public y_scale: number; }  Let&amp;rsquo;s break this down a bit.</description>
+    </item>
+    
+    <item>
+      <title>Intro</title>
+      <link>/pong/introduction/</link>
+      <pubDate>Thu, 23 May 2019 11:03:45 -0700</pubDate>
+      
+      <guid>/pong/introduction/</guid>
+      <description>Everyone has played, or at least heard of, Pong. Right? Right&amp;hellip;
+Pong was one of the first video games ever created and as such, it is extremely simple. We&amp;rsquo;re introducing a lot of new concepts with Encompass and the Hyper ECS architecture, so I think it&amp;rsquo;s a good choice to try re-implementing this game in Encompass as an example.
+We&amp;rsquo;ll be developing this with the Encompass/LOVE starter pack. Go ahead and set that up if you haven&amp;rsquo;t already so you can follow along.</description>
+    </item>
+    
+    <item>
+      <title>Component</title>
+      <link>/concepts/component/</link>
+      <pubDate>Wed, 22 May 2019 12:51:29 -0700</pubDate>
+      
+      <guid>/concepts/component/</guid>
+      <description>A Component is a collection of related data.
+To define a Component, extend the Component class.
+import { Component } from &amp;quot;encompass-ecs&amp;quot;; class PositionComponent extends Component { public x: number; public y: number; }  Components are created in context with an Entity.
+const entity = World.create_entity(); const position = entity.add_component(PositionComponent); position.x = 3; position.y = -4;  Components cannot exist apart from an Entity and are automagically destroyed when they are removed or their Entity is destroyed.</description>
+    </item>
+    
+    <item>
+      <title>Choosing An Engine</title>
+      <link>/getting_started/choosing/</link>
+      <pubDate>Wed, 22 May 2019 09:53:32 -0700</pubDate>
+      
+      <guid>/getting_started/choosing/</guid>
+      <description>Encompass is not a game engine.
+It does not provide any tools for drawing graphics to the screen, playing sounds, handling inputs, or anything of the sort.
+Encompass is purely a tool for managing the code that handles the simulation aspects of your game.
+That means it needs to run on top of an engine.
+Which engine should I use?
+Ultimately, this is a question that you have to answer for your project.</description>
+    </item>
+    
+    <item>
+      <title>Message</title>
+      <link>/concepts/message/</link>
+      <pubDate>Wed, 22 May 2019 13:10:43 -0700</pubDate>
+      
+      <guid>/concepts/message/</guid>
+      <description>Similar to Components, Messages are collections of data.
+Messages are used to transmit data between Engines so they can manipulate the game state accordingly.
+To define a message, extend the Message class.
+import { Message } from &amp;quot;encompass-ecs&amp;quot;; class MotionMessage extends Message { public x: number; public y: number; }  Messages are temporary and destroyed at the end of the frame.
+Ok fine, since you asked, Messages actually live in an object pool so that they aren&amp;rsquo;t garbage-collected at runtime.</description>
+    </item>
+    
+    <item>
+      <title>The Terminal</title>
+      <link>/getting_started/terminal/</link>
+      <pubDate>Sun, 09 Jun 2019 20:05:57 -0700</pubDate>
+      
+      <guid>/getting_started/terminal/</guid>
+      <description>Which operating system are you using?
+If you are on OSX, great! You have an app called Terminal. You can use it to build and run Encompass projects.
+If you are on Linux, great! You are probably a pretty savvy user, but just in case, you probably have a program called Terminal or Konsole on your machine. You can use it to build and run Encompass projects.
+If you are on Windows&amp;hellip; things get a bit trickier.</description>
+    </item>
+    
+    <item>
+      <title>The Text Editor</title>
+      <link>/getting_started/editor/</link>
+      <pubDate>Sun, 09 Jun 2019 20:12:16 -0700</pubDate>
+      
+      <guid>/getting_started/editor/</guid>
+      <description>You will want some kind of text editor to develop Encompass projects.
+I highly recommend VSCodium if you are on Windows or OSX, and Code - OSS if you are on Linux. These are open-source distributions of Microsoft&amp;rsquo;s VSCode editor, which features excellent Typescript integration and various convenient features, like an integrated Git interface and terminal. (Make sure you set the terminal to Git Bash if you are on Windows - this is under File -&amp;gt; Settings.</description>
+    </item>
+    
+    <item>
+      <title>Acknowledgments</title>
+      <link>/notes/acknowledgments/</link>
+      <pubDate>Tue, 11 Jun 2019 19:10:24 -0700</pubDate>
+      
+      <guid>/notes/acknowledgments/</guid>
+      <description>Special thanks is due to Mark Kollasch for his insight into the n-pass engine structure and for overall excellent architecture feedback. Many of the ideas in this project were given to me by him.
+Thanks to Seiji Tanaka for writing a state machine system with me many years ago and sending me on a long journey of thinking about game architecture.
+Thanks to Mitch Gerrard for doing a bunch of graph theory problems with me.</description>
+    </item>
+    
+    <item>
+      <title>Version Control</title>
+      <link>/getting_started/version_control/</link>
+      <pubDate>Sun, 09 Jun 2019 20:17:54 -0700</pubDate>
+      
+      <guid>/getting_started/version_control/</guid>
+      <description>I strongly recommend using some kind of source control software. It is incredibly foolish to develop without it. Version control lets you make changes to your code without worrying about irreparably ruining your code base, so you can make changes with peace of mind.
+I strongly recommend Git. You&amp;rsquo;ll have to download and install it if you&amp;rsquo;re on Windows.
+There is an excellent tutorial on how to use Git on the Git website.</description>
+    </item>
+    
+    <item>
+      <title>Paddle Bounce</title>
+      <link>/pong/polish/paddle_bounce/</link>
+      <pubDate>Sat, 08 Jun 2019 14:46:08 -0700</pubDate>
+      
+      <guid>/pong/polish/paddle_bounce/</guid>
+      <description>One thing that isn&amp;rsquo;t quite right in our game is that when the ball bounces, it reflects directly off the paddle.
+If we look at the original Pong, we see that the angle of the ball is actually affected by the position where the ball hits the paddle. If the ball hits the edges of the paddle, it bounces off at a wider angle. If it hits the center of the paddle, it bounces horizontally.</description>
+    </item>
+    
+    <item>
+      <title>Goal Collision</title>
+      <link>/pong/scoring/goal_collision/</link>
+      <pubDate>Mon, 03 Jun 2019 12:39:11 -0700</pubDate>
+      
+      <guid>/pong/scoring/goal_collision/</guid>
+      <description>First we will need a new collision type for goals.
+export enum CollisionType { ball, goal, paddle, wall, }  And a BallGoalCollisionMessage:
+import { Entity, Message } from &amp;quot;encompass-ecs&amp;quot;; export class BallGoalCollisionMessage extends Message { public ball_entity: Entity; public goal_entity: Entity; }  And some dispatch logic in the CollisionDispatchEngine:
+... switch (collision_message.collision_type_one) { case CollisionType.ball: switch (collision_message.collision_type_two) { case CollisionType.goal: { const message = this.emit_message(BallGoalCollisionMessage); message.ball_entity = collision_message.entity_one; message.</description>
+    </item>
+    
+    <item>
+      <title>Spawning</title>
+      <link>/pong/ball/spawning/</link>
+      <pubDate>Thu, 23 May 2019 18:09:07 -0700</pubDate>
+      
+      <guid>/pong/ball/spawning/</guid>
+      <description>In game/game.ts&amp;hellip;
+const ball_entity = world_builder.create_entity(); const ball_position_component = ball_entity.add_component(PositionComponent); ball_position_component.x = 640; ball_position_component.y = 360; const ball_size = 16; const ball_canvas = love.graphics.newCanvas(ball_size, ball_size); love.graphics.setCanvas(ball_canvas); love.graphics.setBlendMode(&amp;quot;alpha&amp;quot;); love.graphics.setColor(1, 1, 1, 1); love.graphics.rectangle(&amp;quot;fill&amp;quot;, 0, 0, ball_size, ball_size); love.graphics.setCanvas(); const ball_canvas_component = ball_entity.add_component(CanvasComponent); ball_canvas_component.canvas = ball_canvas; ball_canvas_component.x_scale = 1; ball_canvas_component.y_scale = 1;  OK. We&amp;rsquo;re both thinking it. Why is all this crap going straight in game.ts? And there&amp;rsquo;s magic values everywhere! You are absolutely right.</description>
+    </item>
+    
+    <item>
+      <title>Input Handling</title>
+      <link>/pong/move_paddle/input_handling/</link>
+      <pubDate>Thu, 23 May 2019 13:38:42 -0700</pubDate>
+      
+      <guid>/pong/move_paddle/input_handling/</guid>
+      <description>In Pong, the paddles move when the player moves the joystick on their controller up or down.
+We currently have a MotionEngine that reads MotionMessages and moves the PositionComponents they reference.
+So&amp;hellip; it makes sense that we would have an InputEngine that sends MotionMessages, yeah?
+Create a file: game/engines/input.ts
+import { Engine } from &amp;quot;encompass-ecs&amp;quot;; import { MotionMessage } from &amp;quot;game/messages/component/motion&amp;quot;; export class InputEngine extends Engine { public update() { if (love.</description>
+    </item>
+    
+    <item>
+      <title>Position Component</title>
+      <link>/pong/draw_paddle/position_component/</link>
+      <pubDate>Thu, 23 May 2019 11:34:58 -0700</pubDate>
+      
+      <guid>/pong/draw_paddle/position_component/</guid>
+      <description>This one is pretty simple. We can&amp;rsquo;t draw something if we don&amp;rsquo;t know where on screen to draw it.
+Well, why didn&amp;rsquo;t we put that in the CanvasComponent? The reason is that position is a concept that is relevant in more situations than just drawing. For example: collision, yeah? So it really needs to be its own component.
+Create a file: game/components/position.ts
+import { Component } from &amp;quot;encompass-ecs&amp;quot;; export class PositionComponent extends Component { public x: number; public y: number; }  That&amp;rsquo;s it!</description>
+    </item>
+    
+    <item>
+      <title>Canvas Renderer</title>
+      <link>/pong/draw_paddle/canvas_renderer/</link>
+      <pubDate>Thu, 23 May 2019 11:29:24 -0700</pubDate>
+      
+      <guid>/pong/draw_paddle/canvas_renderer/</guid>
+      <description>Now that we have a CanvasComponent, we need to tell Encompass how to draw things that have it.
+Create a file: game/renderers/canvas.ts
+This is gonna be a bit more complex than our Components, so let&amp;rsquo;s take this slowly.
+import { Entity, EntityRenderer } from &amp;quot;encompass-ecs&amp;quot;; import { CanvasComponent } from &amp;quot;game/components/canvas&amp;quot;; import { PositionComponent } from &amp;quot;game/components/position&amp;quot;; @Renders(CanvasComponent, PositionComponent) export class CanvasRenderer extends EntityRenderer { public render(entity: Entity) {} }  An EntityRenderer is defined by the Components it tracks and a render method.</description>
+    </item>
+    
+    <item>
+      <title>Entity</title>
+      <link>/concepts/entity/</link>
+      <pubDate>Wed, 22 May 2019 12:55:22 -0700</pubDate>
+      
+      <guid>/concepts/entity/</guid>
+      <description>An Entity is a structure composed of a unique ID and a collection of Components.
+Entities do not have any implicit properties or behaviors. They are granted these by their collection of Components.
+There is no limit to the amount of Components an Entity may have, and Entities can have any number of Components of a particular type.
+Entities are active by default and can be deactivated. They can also be destroyed, permanently removing them and their components from the World.</description>
+    </item>
+    
+    <item>
+      <title>Case Study: LÖVE</title>
+      <link>/getting_started/case_study_love/</link>
+      <pubDate>Wed, 22 May 2019 10:38:01 -0700</pubDate>
+      
+      <guid>/getting_started/case_study_love/</guid>
+      <description>LÖVE is a 2D game engine that uses Lua as its scripting language. Because of this, we can use Encompass-TS with the TypescriptToLua transpiler to make games for it.
+If you are new to TypeScript, or even new to programming in general, I strongly recommend reviewing the TypeScript handbook.
+Install LÖVE.
+Make sure you can run it from the terminal by running:
+love  You should see the LÖVE window pop up with the NO GAME screen.</description>
+    </item>
+    
+    <item>
+      <title>Initializing the World</title>
+      <link>/pong/draw_paddle/initialize_world/</link>
+      <pubDate>Thu, 23 May 2019 12:06:18 -0700</pubDate>
+      
+      <guid>/pong/draw_paddle/initialize_world/</guid>
+      <description>It&amp;rsquo;s time to put it all together.
+Let&amp;rsquo;s look at our game/game.ts file. The load method looks like this:
+public load() { this.canvas = love.graphics.newCanvas(); const world_builder = new WorldBuilder(); // ADD YOUR ENGINES HERE... // ADD YOUR RENDERERS HERE... // ADD YOUR STARTING ENTITIES HERE... this.world = world_builder.build(); }  Let&amp;rsquo;s do as the helpful file asks, eh?
+import { CanvasRenderer } from &amp;quot;./renderers/canvas&amp;quot;; ... export class Game { .</description>
+    </item>
+    
+    <item>
+      <title>Engine</title>
+      <link>/concepts/engine/</link>
+      <pubDate>Wed, 22 May 2019 13:01:28 -0700</pubDate>
+      
+      <guid>/concepts/engine/</guid>
+      <description>An Engine is the Encompass notion of an ECS System. Much like the engine on a train, your Engines make the simulation move along.
+I never liked the term System. It is typically used to mean structures in game design and I found this confusing when discussing code implementation vs design.
+ Engines are responsible for reading the game state, reading messages, emitting messages, and creating or mutating Entities and Components.</description>
+    </item>
+    
+    <item>
+      <title>LÖVE Project Structure</title>
+      <link>/getting_started/project_structure/</link>
+      <pubDate>Wed, 22 May 2019 12:19:55 -0700</pubDate>
+      
+      <guid>/getting_started/project_structure/</guid>
+      <description>Structuring your project is a crucial component of keeping your Encompass development sane. Let&amp;rsquo;s review how an Encompass project is typically structured.
+If we look at the Encompass/LÖVE starter project, it looks like this:
+main.ts is the entry point of the game for LÖVE. You can change top-level configuration things here, like setting the window size or whether the mouse is visible. You should review the LÖVE Documentation for more clarification.</description>
+    </item>
+    
+    <item>
+      <title>The Messy Basement</title>
+      <link>/why/architecture/mess/</link>
+      <pubDate>Tue, 21 May 2019 15:48:10 -0700</pubDate>
+      
+      <guid>/why/architecture/mess/</guid>
+      <description>Unexpected behavior jumps out at you constantly. You feel like you&amp;rsquo;re playing whack-a-mole with bugs. You can&amp;rsquo;t remember where you put anything and keeping everything sorted is a constant nightmare.
+Uh oh. You&amp;rsquo;re in a messy basement.
+Some characteristics of the messy basement:
+ Magic values, aka putting numbers directly in the source code. Game objects directly manipulating each other&amp;rsquo;s values willy-nilly. Multiple objects that keep track of and depend on each other&amp;rsquo;s state.</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>/notes/license/</link>
+      <pubDate>Tue, 11 Jun 2019 19:14:00 -0700</pubDate>
+      
+      <guid>/notes/license/</guid>
+      <description>This project is licensed under the Cooperative Software License. You should have received a copy of this license with the framework code. If not, the full text of the License is provided here.
+The long and short of it is that if you are working for commercial purposes on behalf of a corporation and not for yourself as a hobbyist individual or a worker-owned cooperative, you are not welcome to use this software as-is.</description>
+    </item>
+    
+    <item>
+      <title>Title</title>
+      <link>/pong/polish/title/</link>
+      <pubDate>Sun, 09 Jun 2019 16:51:13 -0700</pubDate>
+      
+      <guid>/pong/polish/title/</guid>
+      <description>It would be nice to have a title screen. Let&amp;rsquo;s make that happen.
+I would like us to have a concept of game state. The title menu is a pretty distinct thing from the game itself so it feels nicer to have it be self contained instead of managing extra state in the game world.
+Let&amp;rsquo;s create a new class in game/state.ts:
+export abstract class State { public abstract load(): void; public abstract update(dt: number): void; public abstract draw(): void; }  Remember, abstract means that the class cannot be used directly, but describes features that exist in inherited classes.</description>
+    </item>
+    
+    <item>
+      <title>Ball Respawn</title>
+      <link>/pong/scoring/ball_respawn/</link>
+      <pubDate>Tue, 04 Jun 2019 10:44:53 -0700</pubDate>
+      
+      <guid>/pong/scoring/ball_respawn/</guid>
+      <description>In Pong, when the ball collides with the goal, we want it to respawn after a set amount of time, fired from a random point in the center of the play area in a variable direction.
+We can easily implement a timer by using a Component.
+Let&amp;rsquo;s create a new Entity: a timed ball spawner.
+You should be getting fairly familiar with this process by now. We&amp;rsquo;ll need a Component, a Message, and a Spawner.</description>
+    </item>
+    
+    <item>
+      <title>Moving</title>
+      <link>/pong/ball/moving/</link>
+      <pubDate>Thu, 23 May 2019 18:10:17 -0700</pubDate>
+      
+      <guid>/pong/ball/moving/</guid>
+      <description>We already have MotionMessages and a MotionEngine. So it seems logical to re-use these structures for our ball.
+What is actually going to be sending out the MotionMessages?
+What is the main characteristic of the ball in Pong? That&amp;rsquo;s right - it is continuously moving. In other words, it has velocity.
+Let&amp;rsquo;s make a VelocityComponent. In game/components/velocity.ts:
+import { Component } from &amp;quot;encompass-ecs&amp;quot;; export class VelocityComponent extends Component { public x: number; public y: number; }  Let&amp;rsquo;s also create a VelocityEngine.</description>
+    </item>
+    
+    <item>
+      <title>Frame-Dependence</title>
+      <link>/pong/move_paddle/frame_dependence/</link>
+      <pubDate>Thu, 23 May 2019 14:12:20 -0700</pubDate>
+      
+      <guid>/pong/move_paddle/frame_dependence/</guid>
+      <description>Oh dear. That doesn&amp;rsquo;t seem right at all.
+The paddle is moving way too fast. But our speed value is only 10. What&amp;rsquo;s going on?
+Remember when I mentioned frame-dependence and delta-time earlier? This is a classic example of frame-dependence. Notice that the FPS, or frames-per-second, of the game is around 500 in the above recording. Our motion message when we press the &amp;ldquo;up&amp;rdquo; key on the keyboard tells the paddle to move 10 units.</description>
+    </item>
+    
+    <item>
+      <title>First Run</title>
+      <link>/pong/draw_paddle/first_run/</link>
+      <pubDate>Thu, 23 May 2019 12:21:05 -0700</pubDate>
+      
+      <guid>/pong/draw_paddle/first_run/</guid>
+      <description>All we have to do now is run our build and run script in the terminal.
+&amp;gt; npm run love  Exciting!! Let&amp;rsquo;s see what happens&amp;hellip;
+Oh dear. That paddle is quite small. Bit of a buzzkill really.
+const width = 20; const height = 120;  position_component.x = 40; position_component.y = 360;  Thaaaaaaat&amp;rsquo;s more like it.
+Notice how we can just change simple Component values, and the result of the simulation changes.</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>/why/architecture/oop/</link>
+      <pubDate>Tue, 21 May 2019 15:54:18 -0700</pubDate>
+      
+      <guid>/why/architecture/oop/</guid>
+      <description>They call it OOP because it was a mistake. &amp;ndash;Unknown You are probably very familiar with OOP, or object-oriented programming, as a game designer. It is the structural idea behind most games as they are written today, though this is slowly changing.
+OOP is a structure based on the concept of Objects. Objects contain both data, referred to as properties, and logic, referred to as methods.
+Object orientation is an intuitive idea when it comes to building simulation-oriented applications such as video games.</description>
+    </item>
+    
+    <item>
+      <title>Magic Values</title>
+      <link>/pong/move_paddle/magic_values/</link>
+      <pubDate>Thu, 23 May 2019 15:51:58 -0700</pubDate>
+      
+      <guid>/pong/move_paddle/magic_values/</guid>
+      <description>Our code right now is violating one more good architecture principle.
+if (love.keyboard.isDown(&amp;quot;up&amp;quot;)) { const message = this.emit_component_message(MotionMessage, player_one_position_component); message.x = 0; message.y = -10; }  Magic values refer to numbers that have been placed directly in the code. The values being set to message.x and message.y above are magic values. Why are magic values bad?
+Magic values introduce the possibility of duplication. Let&amp;rsquo;s say I start adding my code to be able to move paddles down.</description>
+    </item>
+    
+    <item>
+      <title>ECS</title>
+      <link>/why/architecture/ecs/</link>
+      <pubDate>Tue, 21 May 2019 15:55:45 -0700</pubDate>
+      
+      <guid>/why/architecture/ecs/</guid>
+      <description>ECS stands for Entity-Component-System. It is based on two fundamental principles:
+ There should be complete separation between data and logic. Objects should be created via composition and not inheritance.  Components are the most basic element. They are simply containers of related data. In a 2D game we could have a PositionComponent with an x and y value. Components do not contain logic, though they might have callbacks to deal with side effects, for example creating or destroying bodies in a physics simulator.</description>
+    </item>
+    
+    <item>
+      <title>Win Condition</title>
+      <link>/pong/polish/win_condition/</link>
+      <pubDate>Sun, 09 Jun 2019 19:10:15 -0700</pubDate>
+      
+      <guid>/pong/polish/win_condition/</guid>
+      <description>There&amp;rsquo;s one critical element missing from our game. Right now, once the game starts, it keeps going until the player exits the program. We need a win condition, and to indicate when that win condition has been reached.
+First let&amp;rsquo;s create two separate components - one that holds information about the victory, and one that counts down to when the game should return to the title screen.
+import { Component } from &amp;quot;encompass-ecs&amp;quot;; export class WinDisplayComponent extends Component { public player_index: number; }  import { Component } from &amp;quot;encompass-ecs&amp;quot;; export class FinishGameTimerComponent extends Component { public time_remaining: number; }  Now we&amp;rsquo;ll create an engine that checks the game score and emits a message if one player has reached that score.</description>
+    </item>
+    
+    <item>
+      <title>Tracking the Score</title>
+      <link>/pong/scoring/tracking_score/</link>
+      <pubDate>Tue, 04 Jun 2019 16:49:50 -0700</pubDate>
+      
+      <guid>/pong/scoring/tracking_score/</guid>
+      <description>Finally, we need to track the score and update it appropriately.
+I think a scoring Component is appropriate.
+import { Component } from &amp;quot;encompass-ecs&amp;quot;; export class ScoreComponent extends Component { public score: number; }  We should have two different scores, and they should update based on which specific goal is touched by the ball.
+I think we need another tag component.
+import { Component } from &amp;quot;encompass-ecs&amp;quot;; export class GoalOneComponent extends Component {}  import { Component } from &amp;quot;encompass-ecs&amp;quot;; export class GoalTwoComponent extends Component {}  I know what you&amp;rsquo;re thinking.</description>
+    </item>
+    
+    <item>
+      <title>Decoupling</title>
+      <link>/pong/move_paddle/decoupling/</link>
+      <pubDate>Thu, 23 May 2019 16:37:26 -0700</pubDate>
+      
+      <guid>/pong/move_paddle/decoupling/</guid>
+      <description>There&amp;rsquo;s more to decoupling than just objects not directly referencing each other.
+Really, when we talk about decoupling, we are saying that we don&amp;rsquo;t want the structure of the program having unnecessary direct connections.
+This is a pretty abstract principle, but there is a nice illustration of it in our program as it exists right now.
+Right now our InputEngine is sending Messages to our MotionEngine. Is that actually what we want?</description>
+    </item>
+    
+    <item>
+      <title>Renderer</title>
+      <link>/concepts/renderer/</link>
+      <pubDate>Wed, 22 May 2019 14:16:06 -0700</pubDate>
+      
+      <guid>/concepts/renderer/</guid>
+      <description>A Renderer is responsible for reading the game state and telling the game engine what to draw to the screen.
+Remember: Encompass isn&amp;rsquo;t a game engine and it doesn&amp;rsquo;t have a rendering system. So Renderers aren&amp;rsquo;t actually doing the rendering, they&amp;rsquo;re just telling the game engine what to render.
+ There are two kinds of renderers: GeneralRenderers and EntityRenderers.
+A GeneralRenderer is a Renderer which reads the game state in order to draw elements to the screen.</description>
+    </item>
+    
+    <item>
+      <title>Hyper ECS</title>
+      <link>/why/architecture/hyper_ecs/</link>
+      <pubDate>Tue, 21 May 2019 15:56:13 -0700</pubDate>
+      
+      <guid>/why/architecture/hyper_ecs/</guid>
+      <description>Hyper ECS is a new architecture pattern that attempts to address some common issues with standard ECS. This is the architecture that Encompass implements.
+The core of the architecture is the introduction of a new construct to ECS: the Message.
+A Message is fundamentally a variant of Component, in that it only contains data. But, it is designed to be temporary and is discarded at the end of each frame. It is used to communicate useful information between Systems.</description>
+    </item>
+    
+    <item>
+      <title>World Builder</title>
+      <link>/concepts/world_builder/</link>
+      <pubDate>Wed, 22 May 2019 13:40:25 -0700</pubDate>
+      
+      <guid>/concepts/world_builder/</guid>
+      <description>WorldBuilder is used to construct a World from Engines, Renderers, and an initial state of Entities, Components, and Messages.
+The WorldBuilder enforces certain rules about Engine structure. It is forbidden to have messages create cycles between Engines, and no Component may be mutated by more than one Engine.
+The WorldBuilder uses Engines and their Message read/emit information to determine a valid ordering of the Engines, which is given to the World.</description>
+    </item>
+    
+    <item>
+      <title>Drawing the Score</title>
+      <link>/pong/scoring/drawing_score/</link>
+      <pubDate>Tue, 04 Jun 2019 17:21:52 -0700</pubDate>
+      
+      <guid>/pong/scoring/drawing_score/</guid>
+      <description>Remember Renderers? Haven&amp;rsquo;t thought about those in a while.
+All we need to draw new elements to the screen are Renderers. Let&amp;rsquo;s create a new GeneralRenderer.
+But first, we&amp;rsquo;re gonna need a font. I liked this font. But you can pick any font you like. It&amp;rsquo;s your world and you can do whatever you like in it.
+Place the font of your heart&amp;rsquo;s desire into the directory game/assets/fonts. Then it can be used in your game.</description>
+    </item>
+    
+    <item>
+      <title>Center Line</title>
+      <link>/pong/scoring/center_line/</link>
+      <pubDate>Fri, 07 Jun 2019 10:43:23 -0700</pubDate>
+      
+      <guid>/pong/scoring/center_line/</guid>
+      <description>Now we need to draw the center line.
+This will be a fairly basic GeneralRenderer - it doesn&amp;rsquo;t need to react to anything.
+import { GeneralRenderer } from &amp;quot;encompass-ecs&amp;quot;; export class CenterLineRenderer extends GeneralRenderer { public layer = 0; private middle: number; private height: number; public initialize(middle: number, height: number) { this.middle = middle; this.height = height; } public render() { love.graphics.setLineWidth(2); this.dotted_line(this.middle, 0, this.middle, this.height, 10, 10); } private dotted_line(x1: number, y1: number, x2: number, y2: number, dash: number, gap: number) { const dx = x2 - x1; const dy = y2 - y1; const angle = math.</description>
+    </item>
+    
+    <item>
+      <title>World</title>
+      <link>/concepts/world/</link>
+      <pubDate>Wed, 22 May 2019 12:51:08 -0700</pubDate>
+      
+      <guid>/concepts/world/</guid>
+      <description>World is the pie crust that contains all the delicious Encompass ingredients together.
+The World&amp;rsquo;s update function drives the simulation and should be controlled from your engine&amp;rsquo;s update loop.
+The World&amp;rsquo;s draw function tells the Renderers to draw the scene.
+In LÖVE, the starter project game loop looks like this:
+export class Game { private world: World; private canvas: Canvas; ... public update(dt: number) { this.world.update(dt); } public draw() { love.</description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>/pong/ball/bouncing/design/</link>
+      <pubDate>Tue, 28 May 2019 17:27:59 -0700</pubDate>
+      
+      <guid>/pong/ball/bouncing/design/</guid>
+      <description>Now we have a way to tell when objects are colliding. Let&amp;rsquo;s make something happen as a result!
+First, let&amp;rsquo;s think about the structure of a collision system, and how we want it to resolve collisions.
+One thing we really don&amp;rsquo;t want is for collision to resolve late. For example, a frame finishing with two solid objects lodged inside each other, and then fixing itself on the next frame. Even if it&amp;rsquo;s only for a frame, it&amp;rsquo;s enough for players to detect some awkwardness.</description>
+    </item>
+    
+    <item>
+      <title>Motion Engine: The Revenge</title>
+      <link>/pong/ball/bouncing/motion_engine/</link>
+      <pubDate>Tue, 28 May 2019 18:01:49 -0700</pubDate>
+      
+      <guid>/pong/ball/bouncing/motion_engine/</guid>
+      <description>Here&amp;rsquo;s the process we&amp;rsquo;ll follow for our MotionEngine:
+We associate MotionMessages with their PositionComponents. We consolidate them to get a total &amp;ldquo;x_delta&amp;rdquo; and a &amp;ldquo;y_delta&amp;rdquo;. We create an UpdatePositionMessage containing these values. Next, we create CollisionCheckMessages containing the delta values if the PositionComponent&amp;rsquo;s entity has a BoundingBoxComponent.
+Finally, we go over all BoundingBoxComponents that didn&amp;rsquo;t have MotionMessages associated with them and create CollisionCheckMessages for those too. Otherwise things that didn&amp;rsquo;t move wouldn&amp;rsquo;t be collision checked, and that would not be correct.</description>
+    </item>
+    
+    <item>
+      <title>Collision Checking</title>
+      <link>/pong/ball/bouncing/collision_checking/</link>
+      <pubDate>Tue, 28 May 2019 18:51:15 -0700</pubDate>
+      
+      <guid>/pong/ball/bouncing/collision_checking/</guid>
+      <description>In game/engines/collision_message.ts:
+import { Entity, Message } from &amp;quot;encompass-ecs&amp;quot;; import { CollisionType } from &amp;quot;game/components/collision_types&amp;quot;; import { Collision } from &amp;quot;lua-lib/bump&amp;quot;; export class CollisionMessage extends Message { public entity_one: Entity; public entity_two: Entity; public collision_type_one: CollisionType; public collision_type_two: CollisionType; public entity_one_new_x: number; public entity_one_new_y: number; public entity_two_new_x: number; public entity_two_new_y: number; public collision_data: Collision; }  Let&amp;rsquo;s break down what we want collision detection to actually do.
+First, we tell the Collision World about the current positions of the objects.</description>
+    </item>
+    
+    <item>
+      <title>Collision Dispatch</title>
+      <link>/pong/ball/bouncing/collision_dispatch/</link>
+      <pubDate>Tue, 28 May 2019 19:06:03 -0700</pubDate>
+      
+      <guid>/pong/ball/bouncing/collision_dispatch/</guid>
+      <description>Let&amp;rsquo;s make the CollisionDispatchEngine. All it needs to do is read the CollisionMessages and create specific collision messages from them.
+In games/engines/collision_dispatch.ts:
+import { Emits, Engine, Reads } from &amp;quot;encompass-ecs&amp;quot;; import { CollisionType } from &amp;quot;game/components/collision_types&amp;quot;; import { CollisionMessage } from &amp;quot;game/messages/collision&amp;quot;; import { BallPaddleCollisionMessage } from &amp;quot;game/messages/collisions/ball_paddle&amp;quot;; import { BallWallCollisionMessage } from &amp;quot;game/messages/collisions/ball_wall&amp;quot;; import { PaddleWallCollisionMessage } from &amp;quot;game/messages/collisions/paddle_wall&amp;quot;; @Reads(CollisionMessage) @Emits(BallPaddleCollisionMessage, BallWallCollisionMessage, PaddleWallCollisionMessage) export class CollisionDispatchEngine extends Engine { public update() { const collision_messages = this.</description>
+    </item>
+    
+    <item>
+      <title>Collision Resolution</title>
+      <link>/pong/ball/bouncing/collision_resolution/</link>
+      <pubDate>Tue, 28 May 2019 20:39:54 -0700</pubDate>
+      
+      <guid>/pong/ball/bouncing/collision_resolution/</guid>
+      <description>What do we want to actually happen when a ball collides with a wall?
+Obviously the wall doesn&amp;rsquo;t do anything. It just sits there. That&amp;rsquo;s easy!
+The ball needs to bounce off of the wall. We can calculate exactly where it should end up by adding distance along the collision normal equal to twice the difference between the proposed location of the ball and where it touched the wall.
+Tip</description>
+    </item>
+    
+    <item>
+      <title>Spawners</title>
+      <link>/pong/ball/bouncing/spawners/</link>
+      <pubDate>Wed, 29 May 2019 11:05:16 -0700</pubDate>
+      
+      <guid>/pong/ball/bouncing/spawners/</guid>
+      <description>Our Entities are getting a bit more complex now with the addition of BoundingBoxComponents and CollisionTypeComponents.
+I think we should create Spawners for each of our game entities.
+This will be pretty straightforward. Just decide which parameters we need to create our entities, and add the proper components with those parameters.
+Ball In game/messages/ball_spawn.ts:
+import { Message } from &amp;quot;encompass-ecs&amp;quot;; export class BallSpawnMessage extends Message { public x: number; public y: number; public size: number; public x_velocity: number; public y_velocity: number; }  In game/engines/spawners/ball.</description>
+    </item>
+    
+    <item>
+      <title>Putting It All Together</title>
+      <link>/pong/ball/bouncing/putting_it_together/</link>
+      <pubDate>Tue, 28 May 2019 21:22:44 -0700</pubDate>
+      
+      <guid>/pong/ball/bouncing/putting_it_together/</guid>
+      <description>Finally, we need to set up our initial game state with our spawn messages, and make sure we added and initialized all of our required Engines.
+Our load method in game/game.ts should look something like this:
+public load() { this.canvas = love.graphics.newCanvas(); const collision_world = CollisionWorld.newWorld(32); const world_builder = new WorldBuilder(); // ADD YOUR ENGINES HERE... world_builder.add_engine(BallSpawner).initialize(collision_world); world_builder.add_engine(GameBoundarySpawner).initialize(collision_world); world_builder.add_engine(PaddleSpawner).initialize(collision_world); world_builder.add_engine(InputEngine); world_builder.add_engine(PaddleMovementEngine); world_builder.add_engine(MotionEngine); world_builder.add_engine(VelocityEngine); world_builder.add_engine(CollisionCheckEngine).initialize(collision_world); world_builder.add_engine(CollisionDispatchEngine); world_builder.add_engine(BallWallCollisionEngine); world_builder.add_engine(BallPaddleCollisionEngine); world_builder.add_engine(UpdatePositionEngine); world_builder.add_engine(UpdateVelocityEngine); // ADD YOUR RENDERERS HERE.</description>
+    </item>
+    
+  </channel>
+</rss>

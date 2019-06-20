@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concepts on Encompass Docs</title>
+    <link>/concepts/</link>
+    <description>Recent content in Concepts on Encompass Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 22 May 2019 12:49:24 -0700</lastBuildDate>
+    
+	<atom:link href="/concepts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Component</title>
+      <link>/concepts/component/</link>
+      <pubDate>Wed, 22 May 2019 12:51:29 -0700</pubDate>
+      
+      <guid>/concepts/component/</guid>
+      <description>A Component is a collection of related data.
+To define a Component, extend the Component class.
+import { Component } from &amp;quot;encompass-ecs&amp;quot;; class PositionComponent extends Component { public x: number; public y: number; }  Components are created in context with an Entity.
+const entity = World.create_entity(); const position = entity.add_component(PositionComponent); position.x = 3; position.y = -4;  Components cannot exist apart from an Entity and are automagically destroyed when they are removed or their Entity is destroyed.</description>
+    </item>
+    
+    <item>
+      <title>Message</title>
+      <link>/concepts/message/</link>
+      <pubDate>Wed, 22 May 2019 13:10:43 -0700</pubDate>
+      
+      <guid>/concepts/message/</guid>
+      <description>Similar to Components, Messages are collections of data.
+Messages are used to transmit data between Engines so they can manipulate the game state accordingly.
+To define a message, extend the Message class.
+import { Message } from &amp;quot;encompass-ecs&amp;quot;; class MotionMessage extends Message { public x: number; public y: number; }  Messages are temporary and destroyed at the end of the frame.
+Ok fine, since you asked, Messages actually live in an object pool so that they aren&amp;rsquo;t garbage-collected at runtime.</description>
+    </item>
+    
+    <item>
+      <title>Entity</title>
+      <link>/concepts/entity/</link>
+      <pubDate>Wed, 22 May 2019 12:55:22 -0700</pubDate>
+      
+      <guid>/concepts/entity/</guid>
+      <description>An Entity is a structure composed of a unique ID and a collection of Components.
+Entities do not have any implicit properties or behaviors. They are granted these by their collection of Components.
+There is no limit to the amount of Components an Entity may have, and Entities can have any number of Components of a particular type.
+Entities are active by default and can be deactivated. They can also be destroyed, permanently removing them and their components from the World.</description>
+    </item>
+    
+    <item>
+      <title>Engine</title>
+      <link>/concepts/engine/</link>
+      <pubDate>Wed, 22 May 2019 13:01:28 -0700</pubDate>
+      
+      <guid>/concepts/engine/</guid>
+      <description>An Engine is the Encompass notion of an ECS System. Much like the engine on a train, your Engines make the simulation move along.
+I never liked the term System. It is typically used to mean structures in game design and I found this confusing when discussing code implementation vs design.
+ Engines are responsible for reading the game state, reading messages, emitting messages, and creating or mutating Entities and Components.</description>
+    </item>
+    
+    <item>
+      <title>Renderer</title>
+      <link>/concepts/renderer/</link>
+      <pubDate>Wed, 22 May 2019 14:16:06 -0700</pubDate>
+      
+      <guid>/concepts/renderer/</guid>
+      <description>A Renderer is responsible for reading the game state and telling the game engine what to draw to the screen.
+Remember: Encompass isn&amp;rsquo;t a game engine and it doesn&amp;rsquo;t have a rendering system. So Renderers aren&amp;rsquo;t actually doing the rendering, they&amp;rsquo;re just telling the game engine what to render.
+ There are two kinds of renderers: GeneralRenderers and EntityRenderers.
+A GeneralRenderer is a Renderer which reads the game state in order to draw elements to the screen.</description>
+    </item>
+    
+    <item>
+      <title>World Builder</title>
+      <link>/concepts/world_builder/</link>
+      <pubDate>Wed, 22 May 2019 13:40:25 -0700</pubDate>
+      
+      <guid>/concepts/world_builder/</guid>
+      <description>WorldBuilder is used to construct a World from Engines, Renderers, and an initial state of Entities, Components, and Messages.
+The WorldBuilder enforces certain rules about Engine structure. It is forbidden to have messages create cycles between Engines, and no Component may be mutated by more than one Engine.
+The WorldBuilder uses Engines and their Message read/emit information to determine a valid ordering of the Engines, which is given to the World.</description>
+    </item>
+    
+    <item>
+      <title>World</title>
+      <link>/concepts/world/</link>
+      <pubDate>Wed, 22 May 2019 12:51:08 -0700</pubDate>
+      
+      <guid>/concepts/world/</guid>
+      <description>World is the pie crust that contains all the delicious Encompass ingredients together.
+The World&amp;rsquo;s update function drives the simulation and should be controlled from your engine&amp;rsquo;s update loop.
+The World&amp;rsquo;s draw function tells the Renderers to draw the scene.
+In LÖVE, the starter project game loop looks like this:
+export class Game { private world: World; private canvas: Canvas; ... public update(dt: number) { this.world.update(dt); } public draw() { love.</description>
+    </item>
+    
+  </channel>
+</rss>
