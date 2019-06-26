@@ -29,8 +29,8 @@
 @font-face {
     font-family: 'Work Sans';
     font-style: normal;
-    font-weight: 300;
-    src: url("../fonts/Work_Sans_300.eot?#iefix") format("embedded-opentype"), url("../fonts/Work_Sans_300.woff") format("woff"), url("../fonts/Work_Sans_300.woff2") format("woff2"), url("../fonts/Work_Sans_300.svg#WorkSans") format("svg"), url("../fonts/Work_Sans_300.ttf") format("truetype");
+    font-weight: 400;
+    src: url("../fonts/Work_Sans_400.eot?#iefix") format("embedded-opentype"), url("../fonts/Work_Sans_400.woff") format("woff"), url("../fonts/Work_Sans_400.woff2") format("woff2"), url("../fonts/Work_Sans_400.svg#WorkSans") format("svg"), url("../fonts/Work_Sans_400.ttf") format("truetype");
 }
 @font-face {
     font-family: 'Work Sans';
@@ -84,7 +84,7 @@ b, strong, label, th {
     fill: #fff !important;
 }
 #sidebar {
-    font-weight: 300 !important;
+    font-weight: 400 !important;
 }
 fieldset {
     border: 1px solid #ddd;
@@ -150,7 +150,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     border: 0;
     padding: 0 25px 0 30px;
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
 }
 .searchbox input::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.6);
@@ -449,7 +449,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 }
 body {
     font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.6;
     font-size: 18px !important;
 }
