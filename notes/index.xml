@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Encompass Docs</title>
+    <link>/notes/</link>
+    <description>Recent content in Notes on Encompass Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 11 Jun 2019 19:08:58 -0700</lastBuildDate>
+    
+	<atom:link href="/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>API Reference</title>
+      <link>/notes/api_reference/</link>
+      <pubDate>Tue, 11 Jun 2019 20:35:17 -0700</pubDate>
+      
+      <guid>/notes/api_reference/</guid>
+      <description>A more formal API Reference can be found on ReadTheDocs.</description>
+    </item>
+    
+    <item>
+      <title>Acknowledgments</title>
+      <link>/notes/acknowledgments/</link>
+      <pubDate>Tue, 11 Jun 2019 19:10:24 -0700</pubDate>
+      
+      <guid>/notes/acknowledgments/</guid>
+      <description>Special thanks is due to Mark Kollasch for his insight into the n-pass engine structure and for overall excellent architecture feedback. Many of the ideas in this project were given to me by him.
+Thanks to Seiji Tanaka for writing a state machine system with me many years ago and sending me on a long journey of thinking about game architecture.
+Thanks to Mitch Gerrard for doing a bunch of graph theory problems with me.</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>/notes/license/</link>
+      <pubDate>Tue, 11 Jun 2019 19:14:00 -0700</pubDate>
+      
+      <guid>/notes/license/</guid>
+      <description>This project is licensed under the Cooperative Software License. You should have received a copy of this license with the framework code. If not, the full text of the License is provided here.
+The long and short of it is that if you are working for commercial purposes on behalf of a corporation and not for yourself as a hobbyist individual or a worker-owned cooperative, you are not welcome to use this software as-is.</description>
+    </item>
+    
+  </channel>
+</rss>

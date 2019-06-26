@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Architecture on Encompass Docs</title>
+    <link>/why/architecture/</link>
+    <description>Recent content in Architecture on Encompass Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 21 May 2019 15:18:37 -0700</lastBuildDate>
+    
+	<atom:link href="/why/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Messy Basement</title>
+      <link>/why/architecture/mess/</link>
+      <pubDate>Tue, 21 May 2019 15:48:10 -0700</pubDate>
+      
+      <guid>/why/architecture/mess/</guid>
+      <description>Unexpected behavior jumps out at you constantly. You feel like you&amp;rsquo;re playing whack-a-mole with bugs. You can&amp;rsquo;t remember where you put anything and keeping everything sorted is a constant nightmare.
+Uh oh. You&amp;rsquo;re in a messy basement.
+Some characteristics of the messy basement:
+ Magic values, aka putting numbers directly in the source code. Game objects directly manipulating each other&amp;rsquo;s values willy-nilly. Multiple objects that keep track of and depend on each other&amp;rsquo;s state.</description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>/why/architecture/oop/</link>
+      <pubDate>Tue, 21 May 2019 15:54:18 -0700</pubDate>
+      
+      <guid>/why/architecture/oop/</guid>
+      <description>They call it OOP because it was a mistake. &amp;ndash;Unknown You are probably very familiar with OOP, or object-oriented programming, as a game designer. It is the structural idea behind most games as they are written today, though this is slowly changing.
+OOP is a structure based on the concept of Objects. Objects contain both data, referred to as properties, and logic, referred to as methods.
+Object orientation is an intuitive idea when it comes to building simulation-oriented applications such as video games.</description>
+    </item>
+    
+    <item>
+      <title>ECS</title>
+      <link>/why/architecture/ecs/</link>
+      <pubDate>Tue, 21 May 2019 15:55:45 -0700</pubDate>
+      
+      <guid>/why/architecture/ecs/</guid>
+      <description>ECS stands for Entity-Component-System. It is based on two fundamental principles:
+ There should be complete separation between data and logic. Objects should be created via composition and not inheritance.  Components are the most basic element. They are simply containers of related data. In a 2D game we could have a PositionComponent with an x and y value. Components do not contain logic, though they might have callbacks to deal with side effects, for example creating or destroying bodies in a physics simulator.</description>
+    </item>
+    
+    <item>
+      <title>Hyper ECS</title>
+      <link>/why/architecture/hyper_ecs/</link>
+      <pubDate>Tue, 21 May 2019 15:56:13 -0700</pubDate>
+      
+      <guid>/why/architecture/hyper_ecs/</guid>
+      <description>Hyper ECS is a new architecture pattern that attempts to address some common issues with standard ECS. This is the architecture that Encompass implements.
+The core of the architecture is the introduction of a new construct to ECS: the Message.
+A Message is fundamentally a variant of Component, in that it only contains data. But, it is designed to be temporary and is discarded at the end of each frame. It is used to communicate useful information between Systems.</description>
+    </item>
+    
+  </channel>
+</rss>

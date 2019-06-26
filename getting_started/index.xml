@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on Encompass Docs</title>
+    <link>/getting_started/</link>
+    <description>Recent content in Getting Started on Encompass Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 21 May 2019 18:00:31 -0700</lastBuildDate>
+    
+	<atom:link href="/getting_started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Choosing An Engine</title>
+      <link>/getting_started/choosing/</link>
+      <pubDate>Wed, 22 May 2019 09:53:32 -0700</pubDate>
+      
+      <guid>/getting_started/choosing/</guid>
+      <description>Encompass is not a game engine.
+It does not provide any tools for drawing graphics to the screen, playing sounds, handling inputs, or anything of the sort.
+Encompass is purely a tool for managing the code that handles the simulation aspects of your game.
+That means it needs to run on top of an engine.
+Which engine should I use?
+Ultimately, this is a question that you have to answer for your project.</description>
+    </item>
+    
+    <item>
+      <title>The Terminal</title>
+      <link>/getting_started/terminal/</link>
+      <pubDate>Sun, 09 Jun 2019 20:05:57 -0700</pubDate>
+      
+      <guid>/getting_started/terminal/</guid>
+      <description>Which operating system are you using?
+If you are on OSX, great! You have an app called Terminal. You can use it to build and run Encompass projects.
+If you are on Linux, great! You are probably a pretty savvy user, but just in case, you probably have a program called Terminal or Konsole on your machine. You can use it to build and run Encompass projects.
+If you are on Windows&amp;hellip; things get a bit trickier.</description>
+    </item>
+    
+    <item>
+      <title>The Text Editor</title>
+      <link>/getting_started/editor/</link>
+      <pubDate>Sun, 09 Jun 2019 20:12:16 -0700</pubDate>
+      
+      <guid>/getting_started/editor/</guid>
+      <description>You will want some kind of text editor to develop Encompass projects.
+I highly recommend VSCodium if you are on Windows or OSX, and Code - OSS if you are on Linux. These are open-source distributions of Microsoft&amp;rsquo;s VSCode editor, which features excellent Typescript integration and various convenient features, like an integrated Git interface and terminal. (Make sure you set the terminal to Git Bash if you are on Windows - this is under File -&amp;gt; Settings.</description>
+    </item>
+    
+    <item>
+      <title>Version Control</title>
+      <link>/getting_started/version_control/</link>
+      <pubDate>Sun, 09 Jun 2019 20:17:54 -0700</pubDate>
+      
+      <guid>/getting_started/version_control/</guid>
+      <description>I strongly recommend using some kind of source control software. It is incredibly foolish to develop without it. Version control lets you make changes to your code without worrying about irreparably ruining your code base, so you can make changes with peace of mind.
+I strongly recommend Git. You&amp;rsquo;ll have to download and install it if you&amp;rsquo;re on Windows.
+There is an excellent tutorial on how to use Git on the Git website.</description>
+    </item>
+    
+    <item>
+      <title>Case Study: LÖVE</title>
+      <link>/getting_started/case_study_love/</link>
+      <pubDate>Wed, 22 May 2019 10:38:01 -0700</pubDate>
+      
+      <guid>/getting_started/case_study_love/</guid>
+      <description>LÖVE is a 2D game engine that uses Lua as its scripting language. Because of this, we can use Encompass-TS with the TypescriptToLua transpiler to make games for it.
+If you are new to TypeScript, or even new to programming in general, I strongly recommend reviewing the TypeScript handbook.
+Install LÖVE.
+Make sure you can run it from the terminal by running:
+love  You should see the LÖVE window pop up with the NO GAME screen.</description>
+    </item>
+    
+    <item>
+      <title>LÖVE Project Structure</title>
+      <link>/getting_started/project_structure/</link>
+      <pubDate>Wed, 22 May 2019 12:19:55 -0700</pubDate>
+      
+      <guid>/getting_started/project_structure/</guid>
+      <description>Structuring your project is a crucial component of keeping your Encompass development sane. Let&amp;rsquo;s review how an Encompass project is typically structured.
+If we look at the Encompass/LÖVE starter project, it looks like this:
+main.ts is the entry point of the game for LÖVE. You can change top-level configuration things here, like setting the window size or whether the mouse is visible. You should review the LÖVE Documentation for more clarification.</description>
+    </item>
+    
+  </channel>
+</rss>

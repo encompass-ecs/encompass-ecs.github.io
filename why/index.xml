@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Why? on Encompass Docs</title>
+    <link>/why/</link>
+    <description>Recent content in Why? on Encompass Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 21 May 2019 14:25:56 -0700</lastBuildDate>
+    
+	<atom:link href="/why/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,85 @@
+/*
+
+Tragedy and Geometry style by Evan Hemsley
+
+*/
+
+pre {
+    background: #06122F;
+    border-radius: 5px;
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #06122F;
+    color: #f8f8ff;
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: #1451DF;
+  }
+
+  /* Green */
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-addition {
+    color: #00E086;
+  }
+
+  /* Pink */
+  .hljs-number,
+  .hljs-string,
+  .hljs-meta .hljs-meta-string,
+  .hljs-literal,
+  .hljs-doctag,
+  .hljs-regexp {
+    color: #f000a4;
+  }
+
+  /* Green */
+  .hljs-title,
+  .hljs-section,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class {
+    color: #00E086;
+  }
+
+  /* Off Green */
+  .hljs-attribute,
+  .hljs-attr,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-class .hljs-title,
+  .hljs-type {
+    color: #00ffc9;
+  }
+
+  /* Orange */
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-subst,
+  .hljs-meta,
+  .hljs-meta .hljs-keyword,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-link,
+  .hljs-built_in,
+  .hljs-deletion {
+    color: #FFAA00;
+  }
+
+  .hljs-formula {
+    background: #073642;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }

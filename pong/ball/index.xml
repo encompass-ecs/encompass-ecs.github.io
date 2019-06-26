@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ball on Encompass Docs</title>
+    <link>/pong/ball/</link>
+    <description>Recent content in Ball on Encompass Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 23 May 2019 17:52:21 -0700</lastBuildDate>
+    
+	<atom:link href="/pong/ball/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spawning</title>
+      <link>/pong/ball/spawning/</link>
+      <pubDate>Thu, 23 May 2019 18:09:07 -0700</pubDate>
+      
+      <guid>/pong/ball/spawning/</guid>
+      <description>In game/game.ts&amp;hellip;
+const ball_entity = world_builder.create_entity(); const ball_position_component = ball_entity.add_component(PositionComponent); ball_position_component.x = 640; ball_position_component.y = 360; const ball_size = 16; const ball_canvas = love.graphics.newCanvas(ball_size, ball_size); love.graphics.setCanvas(ball_canvas); love.graphics.setBlendMode(&amp;quot;alpha&amp;quot;); love.graphics.setColor(1, 1, 1, 1); love.graphics.rectangle(&amp;quot;fill&amp;quot;, 0, 0, ball_size, ball_size); love.graphics.setCanvas(); const ball_canvas_component = ball_entity.add_component(CanvasComponent); ball_canvas_component.canvas = ball_canvas; ball_canvas_component.x_scale = 1; ball_canvas_component.y_scale = 1;  OK. We&amp;rsquo;re both thinking it. Why is all this crap going straight in game.ts? And there&amp;rsquo;s magic values everywhere! You are absolutely right.</description>
+    </item>
+    
+    <item>
+      <title>Moving</title>
+      <link>/pong/ball/moving/</link>
+      <pubDate>Thu, 23 May 2019 18:10:17 -0700</pubDate>
+      
+      <guid>/pong/ball/moving/</guid>
+      <description>We already have MotionMessages and a MotionEngine. So it seems logical to re-use these structures for our ball.
+What is actually going to be sending out the MotionMessages?
+What is the main characteristic of the ball in Pong? That&amp;rsquo;s right - it is continuously moving. In other words, it has velocity.
+Let&amp;rsquo;s make a VelocityComponent. In game/components/velocity.ts:
+import { Component } from &amp;quot;encompass-ecs&amp;quot;; export class VelocityComponent extends Component { public x: number; public y: number; }  Let&amp;rsquo;s also create a VelocityEngine.</description>
+    </item>
+    
+  </channel>
+</rss>

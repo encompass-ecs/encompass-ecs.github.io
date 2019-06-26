@@ -1,0 +1,2773 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="description" content="Documentation for Encompass ECS">
+<meta name="author" content="Evan Hemsley">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Spawning :: Encompass Docs</title>
+
+    
+    <link href="/css/nucleus.css?1561583309" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1561583309" rel="stylesheet">
+    <link href="/css/hybrid.css?1561583309" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1561583309" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1561583309" rel="stylesheet">
+    <link href="/css/auto-complete.css?1561583309" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1561583309" rel="stylesheet">
+    <link href="/css/theme.css?1561583309" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1561583309" rel="stylesheet">
+    <link href="/css/syntax.css?1561583309" rel="stylesheet">
+    
+      <link href="/css/theme-encompass.css?1561583309" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1561583309"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/pong/ball/spawning/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/index.html"><img src="/images/logo-and-text.png" width="200"></a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1561583309"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1561583309"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1561583309"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/why/" title="Why?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/why/">
+          <b>1. </b>Why?
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/why/the_hard_way/" title="The Hard Way" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/why/the_hard_way/">
+          The Hard Way
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/why/architecture/" title="Architecture" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/why/architecture/">
+          Architecture
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/why/architecture/mess/" title="The Messy Basement" class="dd-item ">
+        <a href="/why/architecture/mess/">
+        The Messy Basement
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/why/architecture/oop/" title="OOP" class="dd-item ">
+        <a href="/why/architecture/oop/">
+        OOP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/why/architecture/ecs/" title="ECS" class="dd-item ">
+        <a href="/why/architecture/ecs/">
+        ECS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/why/architecture/hyper_ecs/" title="Hyper ECS" class="dd-item ">
+        <a href="/why/architecture/hyper_ecs/">
+        Hyper ECS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/getting_started/" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting_started/">
+          <b>2. </b>Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting_started/choosing/" title="Choosing An Engine" class="dd-item ">
+        <a href="/getting_started/choosing/">
+        Choosing An Engine
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting_started/terminal/" title="The Terminal" class="dd-item ">
+        <a href="/getting_started/terminal/">
+        The Terminal
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting_started/editor/" title="The Text Editor" class="dd-item ">
+        <a href="/getting_started/editor/">
+        The Text Editor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting_started/version_control/" title="Version Control" class="dd-item ">
+        <a href="/getting_started/version_control/">
+        Version Control
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting_started/case_study_love/" title="Case Study: LÖVE" class="dd-item ">
+        <a href="/getting_started/case_study_love/">
+        Case Study: LÖVE
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/getting_started/project_structure/" title="LÖVE Project Structure" class="dd-item ">
+        <a href="/getting_started/project_structure/">
+        LÖVE Project Structure
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/concepts/" title="Concepts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/concepts/">
+          <b>3. </b>Concepts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/concepts/component/" title="Component" class="dd-item ">
+        <a href="/concepts/component/">
+        Component
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/concepts/message/" title="Message" class="dd-item ">
+        <a href="/concepts/message/">
+        Message
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/concepts/entity/" title="Entity" class="dd-item ">
+        <a href="/concepts/entity/">
+        Entity
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/concepts/engine/" title="Engine" class="dd-item ">
+        <a href="/concepts/engine/">
+        Engine
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/concepts/renderer/" title="Renderer" class="dd-item ">
+        <a href="/concepts/renderer/">
+        Renderer
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/concepts/world_builder/" title="World Builder" class="dd-item ">
+        <a href="/concepts/world_builder/">
+        World Builder
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/concepts/world/" title="World" class="dd-item ">
+        <a href="/concepts/world/">
+        World
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/" title="Pong" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/pong/">
+          <b>4. </b>Pong
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/introduction/" title="Intro" class="dd-item ">
+        <a href="/pong/introduction/">
+        Intro
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/draw_paddle/" title="Drawing a Paddle" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pong/draw_paddle/">
+          Drawing a Paddle
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/draw_paddle/canvas_component/" title="Canvas Component" class="dd-item ">
+        <a href="/pong/draw_paddle/canvas_component/">
+        Canvas Component
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/draw_paddle/position_component/" title="Position Component" class="dd-item ">
+        <a href="/pong/draw_paddle/position_component/">
+        Position Component
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/draw_paddle/canvas_renderer/" title="Canvas Renderer" class="dd-item ">
+        <a href="/pong/draw_paddle/canvas_renderer/">
+        Canvas Renderer
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/draw_paddle/initialize_world/" title="Initializing the World" class="dd-item ">
+        <a href="/pong/draw_paddle/initialize_world/">
+        Initializing the World
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/draw_paddle/first_run/" title="First Run" class="dd-item ">
+        <a href="/pong/draw_paddle/first_run/">
+        First Run
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/move_paddle/" title="Moving the Paddle" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pong/move_paddle/">
+          Moving the Paddle
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/move_paddle/motion_engine/" title="Motion Engine" class="dd-item ">
+        <a href="/pong/move_paddle/motion_engine/">
+        Motion Engine
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/move_paddle/input_handling/" title="Input Handling" class="dd-item ">
+        <a href="/pong/move_paddle/input_handling/">
+        Input Handling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/move_paddle/frame_dependence/" title="Frame-Dependence" class="dd-item ">
+        <a href="/pong/move_paddle/frame_dependence/">
+        Frame-Dependence
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/move_paddle/magic_values/" title="Magic Values" class="dd-item ">
+        <a href="/pong/move_paddle/magic_values/">
+        Magic Values
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/move_paddle/decoupling/" title="Decoupling" class="dd-item ">
+        <a href="/pong/move_paddle/decoupling/">
+        Decoupling
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/ball/" title="Ball" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/pong/ball/">
+          Ball
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/spawning/" title="Spawning" class="dd-item active">
+        <a href="/pong/ball/spawning/">
+        Spawning
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/moving/" title="Moving" class="dd-item ">
+        <a href="/pong/ball/moving/">
+        Moving
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/ball/bouncing/" title="Bouncing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pong/ball/bouncing/">
+          Bouncing
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/bouncing/library_integration/" title="Library Integration" class="dd-item ">
+        <a href="/pong/ball/bouncing/library_integration/">
+        Library Integration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/bouncing/design/" title="Design" class="dd-item ">
+        <a href="/pong/ball/bouncing/design/">
+        Design
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/bouncing/motion_engine/" title="Motion Engine: The Revenge" class="dd-item ">
+        <a href="/pong/ball/bouncing/motion_engine/">
+        Motion Engine: The Revenge
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/bouncing/collision_checking/" title="Collision Checking" class="dd-item ">
+        <a href="/pong/ball/bouncing/collision_checking/">
+        Collision Checking
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/bouncing/collision_dispatch/" title="Collision Dispatch" class="dd-item ">
+        <a href="/pong/ball/bouncing/collision_dispatch/">
+        Collision Dispatch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/bouncing/collision_resolution/" title="Collision Resolution" class="dd-item ">
+        <a href="/pong/ball/bouncing/collision_resolution/">
+        Collision Resolution
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/bouncing/spawners/" title="Spawners" class="dd-item ">
+        <a href="/pong/ball/bouncing/spawners/">
+        Spawners
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/ball/bouncing/putting_it_together/" title="Putting It All Together" class="dd-item ">
+        <a href="/pong/ball/bouncing/putting_it_together/">
+        Putting It All Together
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/opponent/" title="The Opponent" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pong/opponent/">
+          The Opponent
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/scoring/" title="Scoring" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pong/scoring/">
+          Scoring
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/scoring/goal_collision/" title="Goal Collision" class="dd-item ">
+        <a href="/pong/scoring/goal_collision/">
+        Goal Collision
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/scoring/ball_respawn/" title="Ball Respawn" class="dd-item ">
+        <a href="/pong/scoring/ball_respawn/">
+        Ball Respawn
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/scoring/tracking_score/" title="Tracking the Score" class="dd-item ">
+        <a href="/pong/scoring/tracking_score/">
+        Tracking the Score
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/scoring/drawing_score/" title="Drawing the Score" class="dd-item ">
+        <a href="/pong/scoring/drawing_score/">
+        Drawing the Score
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/scoring/center_line/" title="Center Line" class="dd-item ">
+        <a href="/pong/scoring/center_line/">
+        Center Line
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/polish/" title="Finishing Touches" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pong/polish/">
+          Finishing Touches
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/polish/paddle_bounce/" title="Paddle Bounce" class="dd-item ">
+        <a href="/pong/polish/paddle_bounce/">
+        Paddle Bounce
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/polish/title/" title="Title" class="dd-item ">
+        <a href="/pong/polish/title/">
+        Title
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pong/polish/win_condition/" title="Win Condition" class="dd-item ">
+        <a href="/pong/polish/win_condition/">
+        Win Condition
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pong/conclusion/" title="Conclusion" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pong/conclusion/">
+          Conclusion
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/notes/" title="Notes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/notes/">
+          <b>A. </b>Notes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/notes/api_reference/" title="API Reference" class="dd-item ">
+        <a href="/notes/api_reference/">
+        API Reference
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/notes/acknowledgments/" title="Acknowledgments" class="dd-item ">
+        <a href="/notes/acknowledgments/">
+        Acknowledgments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/notes/license/" title="License" class="dd-item ">
+        <a href="/notes/license/">
+        License
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Encompass</a> > <a href='/pong/'>Pong</a> > <a href='/pong/ball/'>Ball</a> > Spawning
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Spawning
+            </h1>
+          
+
+        
+
+
+
+<p>In <strong>game/game.ts</strong>&hellip;</p>
+
+<pre><code class="language-ts">const ball_entity = world_builder.create_entity();
+
+const ball_position_component = ball_entity.add_component(PositionComponent);
+ball_position_component.x = 640;
+ball_position_component.y = 360;
+
+const ball_size = 16;
+const ball_canvas = love.graphics.newCanvas(ball_size, ball_size);
+love.graphics.setCanvas(ball_canvas);
+love.graphics.setBlendMode(&quot;alpha&quot;);
+love.graphics.setColor(1, 1, 1, 1);
+love.graphics.rectangle(&quot;fill&quot;, 0, 0, ball_size, ball_size);
+love.graphics.setCanvas();
+
+const ball_canvas_component = ball_entity.add_component(CanvasComponent);
+ball_canvas_component.canvas = ball_canvas;
+ball_canvas_component.x_scale = 1;
+ball_canvas_component.y_scale = 1;
+</code></pre>
+
+<p>OK. We&rsquo;re both thinking it. Why is all this crap going straight in <strong>game.ts</strong>? And there&rsquo;s magic values everywhere! You are absolutely right. Encompass actually has a built-in abstraction Engine for creating new Entities called a Spawner. Let&rsquo;s use one.</p>
+
+<p>Let&rsquo;s create a new folder: <strong>game/engines/spawners</strong></p>
+
+<p>And a new file: <strong>game/engines/spawners/ball.ts</strong></p>
+
+<pre><code class="language-ts">import { Reads, Spawner } from &quot;encompass-ecs&quot;;
+import { CanvasComponent } from &quot;game/components/canvas&quot;;
+import { PositionComponent } from &quot;game/components/position&quot;;
+import { BallSpawnMessage } from &quot;game/messages/ball_spawn&quot;;
+
+@Reads(BallSpawnMessage)
+export class BallSpawner extends Spawner {
+    public spawn(message: BallSpawnMessage) {
+        const ball_entity = this.create_entity();
+
+        const ball_position_component = ball_entity.add_component(PositionComponent);
+        ball_position_component.x = message.x;
+        ball_position_component.y = message.y;
+
+        const ball_canvas = love.graphics.newCanvas(message.size, message.size);
+        love.graphics.setCanvas(ball_canvas);
+        love.graphics.setBlendMode(&quot;alpha&quot;);
+        love.graphics.setColor(1, 1, 1, 1);
+        love.graphics.rectangle(&quot;fill&quot;, 0, 0, message.size, message.size);
+        love.graphics.setCanvas();
+
+        const ball_canvas_component = ball_entity.add_component(CanvasComponent);
+        ball_canvas_component.canvas = ball_canvas;
+        ball_canvas_component.x_scale = 1;
+        ball_canvas_component.y_scale = 1;
+    }
+}
+</code></pre>
+
+<p>Spawners aren&rsquo;t very complicated. They have one required method: <em>spawn</em>.
+The first Message type given to <strong>@Reads</strong> is assumed to be the spawn message type.</p>
+
+<p>When the Spawner reads a message of the spawn message type, it runs its spawn method once. Simple as that.</p>
+
+<p>Now let&rsquo;s actually send out the BallSpawnMessage.</p>
+
+<p>In <strong>game/game.ts</strong>&hellip;</p>
+
+<pre><code class="language-ts">...
+
+    world_builder.add_engine(BallSpawner);
+
+...
+
+    const ball_spawn_message = world_builder.emit_message(BallSpawnMessage);
+    ball_spawn_message.x = 640;
+    ball_spawn_message.y = 360;
+    ball_spawn_message.size = 16;
+
+...
+</code></pre>
+
+<p><img src="/images/paddle_with_ball.png" alt="boring ball" /></p>
+
+<p>Well, it draws, but it&rsquo;s a bit boring without any movement. Let&rsquo;s make it move around.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/pong/ball/" title="Ball"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/pong/ball/moving/" title="Moving" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1561583309"></script>
+    <script src="/js/perfect-scrollbar.min.js?1561583309"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1561583309"></script>
+    <script src="/js/jquery.sticky.js?1561583309"></script>
+    <script src="/js/featherlight.min.js?1561583309"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1561583309"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1561583309"></script>
+    <script src="/js/learn.js?1561583309"></script>
+    <script src="/js/hugo-learn.js?1561583309"></script>
+
+    <link href="/mermaid/mermaid.css?1561583309" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1561583309"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <link rel="stylesheet" href="/css/syntax.css">
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
+
